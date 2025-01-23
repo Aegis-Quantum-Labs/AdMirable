@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: charity-backend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: charity-backend
+  template:
+    metadata:
+      labels:
+        app: charity-backend
+    spec:
+      containers:
+      - name: charity-backend
+        image: your-registry/charity-backend:latest
+        ports:
+        - containerPort: 4000
+        env:
+        - name: DB_URL
+          value: "mongodb://charity-mongo:27017/charity-redirect"
+        - name: JWT_SECRET
+          value: "supersecretjwtkey"
