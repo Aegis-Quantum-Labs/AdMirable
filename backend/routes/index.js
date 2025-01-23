@@ -2,18 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
-// Import controllers
-const authController = require('../services/auth/authController');
-const adTrackingController = require('../services/tracking/adTrackingController');
-const paymentController = require('../services/payments/paymentController');
-const charityController = require('../services/charities/charityController');
+// Sub-routers
+const authRoutes = require('./authRoutes');
+const userRoutes = require('./userRoutes');
+const donationRoutes = require('./donationRoutes');
+const charityRoutes = require('./charityRoutes');
 
-// Example endpoints
-router.post('/auth/register', authController.registerUser);
-router.post('/auth/login', authController.loginUser);
-router.post('/tracking/ad', adTrackingController.logAdImpression);
-router.post('/payments/donate', paymentController.donateFunds);
-router.get('/charities', charityController.listCharities);
-router.get('/donations/total', paymentController.getTotalDonations);
+router.use('/auth', authRoutes);
+router.use('/user', userRoutes);
+router.use('/donations', donationRoutes);
+router.use('/charities', charityRoutes);
 
 module.exports = router;

@@ -1,0 +1,23 @@
+/* extension/src/popup/popup.css */
+
+#admirable-popup {
+  font-family: sans-serif;
+  width: 200px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 1.2em;
+}
+
+button {
+  background: #0062cc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+button:hover {
+  background: #004fa3;
+}

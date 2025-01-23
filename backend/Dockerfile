@@ -1,4 +1,5 @@
-# Dockerfile for backend
+# Dockerfile for the AdMirable backend
+
 FROM node:16-alpine
 
 WORKDIR /usr/src/app
